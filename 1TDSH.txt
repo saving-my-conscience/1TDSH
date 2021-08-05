@@ -1,0 +1,32 @@
+Java:
+	Tipos primitivos: byte, short, int, long, float, double, char, boolean
+	Tipos de referência: String, Cliente, Produto..
+	
+	Pilares da Orientação a Objetos:
+		Abstração: As classes devem possuir o que é relevante, retira o que é desnecessário
+		Herança: Criar uma classe a partir de outra classe (extends, recebe os métodos e atributos)
+		Encapsulamento: Proteger o acesso dos atributos/métodos (getters e setters)
+		Polimorfismo: Mesmo método com várias versões (sobrescrita e sobrecarga)
+		
+Modificadores de acesso:
+		public: Todos
+		protected: A própria classe, classe filhas e dentro do mesmo pacote
+		default/package: Dentro do mesmo pacote
+		private: Somente a própria classe
+		
+Strings: é imutável, comparação de Strings com .equals()	
+
+Construtores: utilizado para instanciar uma classe, não possui retorno e possui o mesmo nome da classe
+
+Sobrescrita: O mesmo método do pai implementado na classe filha, para modificar/adicionar uma implementação
+Sobrecarga:	Método com o mesmo nome, na mesma classe e com parâmetros diferentes (tipo, qtd, ordem)
+
+Enum: Conjunto de constantes
+
+Padrão de nomenclatura:
+	Classe: UpperCamelCase
+	Métodos/Atributos: camelCase
+	Constantes: EXEMPLO_CONSTANTE
+	
+
+	
