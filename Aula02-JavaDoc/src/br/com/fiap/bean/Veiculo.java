@@ -7,7 +7,7 @@ package br.com.fiap.bean;
  *
  */
 public class Veiculo {
-
+	
 	/**
 	 * Armazena o ano do veículo
 	 */
