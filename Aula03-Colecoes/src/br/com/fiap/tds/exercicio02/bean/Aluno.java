@@ -15,6 +15,11 @@ public class Aluno {
 		this.idade = idade;
 		this.media = media;
 	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + nome + " idade: " + idade + " média: " + media;
+	}
 
 	public String getNome() {
 		return nome;
