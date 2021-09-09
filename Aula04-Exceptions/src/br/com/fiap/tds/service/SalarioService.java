@@ -32,6 +32,7 @@ public class SalarioService {
 			throw new SalarioInvalidoException("O salário não pode ser negativo");
 		} 
 		
+		
 		return salario*mesesTrabalhados / 12;
 	}
 }

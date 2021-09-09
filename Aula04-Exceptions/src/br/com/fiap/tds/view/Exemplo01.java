@@ -6,6 +6,7 @@ public class Exemplo01 {
 
 	public static void main(String[] args) {
 		
+
 		try {
 			//Código que pode lançar uma exceção
 			//Ler um número
