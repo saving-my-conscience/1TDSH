@@ -19,11 +19,13 @@ public class Exemplo02 {
 			String linha;
 			//Objeto para manipular Strings, podendo alterar o seu valor (String)
 			StringBuffer texto = new StringBuffer();
+			//String texto = "";
 			
 			//readLine() lê a linha e vai para a próxima linha, se não exitir mais linhas, retorna null
 			//Primeiro lê a linha, depois atribui na variável "linha" e por fim, compara com null
 			while ( (linha = arquivo.readLine()) != null) {
 				texto.append(linha).append("\n"); //Adiciona a string no final da sequencia
+				//texto += linha + "\n";
 			}
 			
 			System.out.println(texto);

@@ -1,6 +1,7 @@
 package br.com.fiap.tds.view;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,6 +31,9 @@ public class Exemplo03 {
 				PrintWriter outPrintWriter = new PrintWriter(arquivo);
 				outPrintWriter.println("Fiap - Faculdade");
 				outPrintWriter.close();
+				
+				//Ler do arquivo
+				FileReader inputStream = new FileReader(arquivo);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
