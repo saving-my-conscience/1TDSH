@@ -5,3 +5,6 @@ CREATE TABLE tb_produto (
     ds_produto  VARCHAR(255),
     qt_produto  INTEGER
 );
+
+
+create sequence sq_tb_produto start with 1 increment by 1;

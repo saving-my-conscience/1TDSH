@@ -1,19 +1,17 @@
 package br.com.fiap.tds.view;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import br.com.fiap.tds.factory.ConnectionFactory;
 
 public class ExemploPesquisa {
 
 	public static void main(String[] args) {
 		
 		try {
-			//Obter uma conexão com o banco
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl","pf0392", "fiap");
+			Connection conexao = ConnectionFactory.getConnection();
 			
 			//Criar o Statement
 			Statement comando = conexao.createStatement();
