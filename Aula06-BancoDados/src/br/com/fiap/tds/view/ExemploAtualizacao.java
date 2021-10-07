@@ -2,19 +2,27 @@ package br.com.fiap.tds.view;
 
 import java.sql.Connection;
 import java.util.Scanner;
-
 import br.com.fiap.tds.bean.Produto;
-import br.com.fiap.tds.bo.ProdutoBo;
-import br.com.fiap.tds.exception.ParametroInvalidoException;
+import br.com.fiap.tds.dao.ProdutoDao;
+import br.com.fiap.tds.exception.EntidadeNaoEncontradaException;
 import br.com.fiap.tds.factory.ConnectionFactory;
 
-public class ExemploCadastro2 {
+public class ExemploAtualizacao {
 
 	public static void main(String[] args) {
-		
 		try {
-			//Ler os dados do produto
+			//Obter uma conexão
+			Connection conexao = ConnectionFactory.getConnection();
+			
+			//Instanciar um ProdutoDao
+			ProdutoDao dao = new ProdutoDao(conexao);
+			
+			//Ler os dados para atualizar
 			Scanner leitor = new Scanner(System.in);
+
+			System.out.println("Digite o código");
+			int codigo = leitor.nextInt();
+			
 			System.out.println("Digite o nome do produto");
 			String nome = leitor.next() + leitor.nextLine();
 			
@@ -28,27 +36,18 @@ public class ExemploCadastro2 {
 			int quantidade = leitor.nextInt();
 			
 			//Instanciar um produto
-			Produto produto = new Produto(0, nome, valor, descricao, quantidade);
+			Produto produto = new Produto(codigo, nome, valor, descricao, quantidade);
 			
-			//Obter a conexão com o banco
-			Connection conexao = ConnectionFactory.getConnection();
-			
-			//Instanciar o DAO
-			//ProdutoDao dao = new ProdutoDao(conexao);
-			ProdutoBo bo = new ProdutoBo(conexao);
-			
-			//Cadastrar o produto no banco utilizando o DAO
-			bo.cadastrar(produto);
-		
-			System.out.println("Produto cadastrado!");
+			//Atualizar o produto
+			dao.atualizar(produto);
+			System.out.println("Produto atualizado!");
 			
 			conexao.close();
-		} catch (ParametroInvalidoException e) {
+			leitor.close();
+		} catch (EntidadeNaoEncontradaException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}//main
-	
 }//class

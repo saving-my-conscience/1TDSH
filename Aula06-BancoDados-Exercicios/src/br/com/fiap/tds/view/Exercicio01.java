@@ -7,6 +7,9 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
+import br.com.fiap.tds.dao.ProdutoDao;
+import br.com.fiap.tds.factory.ConnectionFactory;
+
 public class Exercicio01 {
 
 	public static void main(String[] args) {
@@ -17,9 +20,11 @@ public class Exercicio01 {
 			BufferedReader reader = new BufferedReader(inputStream);
 			
 			//Criar a conexão com o banco de dados
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl","pf0392", "fiap");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl","pf0392", "fiap");
 		
+			Connection conexao = ConnectionFactory.getConnection();
+			
 			//Criar o Statement
 			Statement stmt = conexao.createStatement();
 			
